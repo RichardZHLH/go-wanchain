@@ -58,7 +58,7 @@ fi
 sudo echo '#!/bin/bash'  > ~/.wanchain/startGwan.sh
 sudo echo ''  >> ~/.wanchain/startGwan.sh
 sudo echo "/bin/monitor.sh 1514 &" >> ~/.wanchain/startGwan.sh
-sudo echo "/bin/gwan ${NETWORK} --miner.etherbase ${addrNew} --unlock ${addrNew} --password /root/.wanchain/pw.txt --mine --miner.threads=1 --ethstats ${YOUR_NODE_NAME}:admin@testnet.wanstats.io" >> ~/.wanchain/startGwan.sh
+sudo echo "/bin/gwan ${NETWORK} --miner.etherbase ${addrNew} --unlock ${addrNew} --password /root/.wanchain/pw.txt --mine --miner.threads=1 --ethstats ${YOUR_NODE_NAME}:wanchainmainnetvalidator@wanstats.io" >> ~/.wanchain/startGwan.sh
 chmod 755 ~/.wanchain/startGwan.sh
 
 
