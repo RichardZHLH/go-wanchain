@@ -1,7 +1,7 @@
 # ubuntu
 
 FROM ubuntu:22.04
-MAINTAINER molin
+MAINTAINER wanchaindevs
 WORKDIR /root
 
 RUN apt-get update
