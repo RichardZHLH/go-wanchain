@@ -5,8 +5,12 @@ SYSLOG_SERVER="log.wanchain.org"
 
 SYSLOG_PORT=$1
 LOG_NAME="system_metrics_pos_node"
-HOSTNAME=`ps -ef | grep gwan | grep -v grep | awk  '{print $19}' | awk -F ':' '{print $1}'`
-
+HOSTNAME=""
+if [ $SYSLOG_PORT -eq 1514 ]; then
+	HOSTNAME=`ps -ef | grep gwan | grep -v grep | awk  '{print $18}' | awk -F ':' '{print $1}'`
+else
+	HOSTNAME=`ps -ef | grep gwan | grep -v grep | awk  '{print $19}' | awk -F ':' '{print $1}'`
+fi
 
 collect_metrics() {
 
@@ -31,6 +35,7 @@ collect_metrics() {
 
 while true; do
 	collect_metrics
-	sleep 600
+	sleep 3600
 done
+
 
